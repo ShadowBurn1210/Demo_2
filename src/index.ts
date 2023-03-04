@@ -1,5 +1,5 @@
 import { Application, Sprite } from 'pixi.js'
-import {germanis} from "./game/heros";
+import {afrika, germanis, rect} from "./game/heros";
 
 const app = new Application({
 	view: document.getElementById("pixi-canvas") as HTMLCanvasElement,
@@ -10,19 +10,11 @@ const app = new Application({
 	height: 800
 });
 
-const clampy: Sprite = Sprite.from("afrika.jpg");
-
 app.stage.scale.set(3, 3)
 
+const afrik = new afrika(app)
+const colision = new rect(app)
 
-
-clampy.anchor.set(0.5);
-clampy.x = app.screen.width / 2;
-clampy.y = app.screen.height / 2;
-clampy.height = app.screen.height
-clampy.width = app.screen.width
-
-app.stage.addChild(clampy);
 
 document.addEventListener("keydown", e => movementing(e));
 
@@ -68,3 +60,4 @@ function movementing(e: KeyboardEvent): void {
 
 app.stage.x = -app.screen.width/2 - germ.x - germ.width/2
 app.stage.y =  -app.screen.height/2 - germ.y - germ.height/2
+
