@@ -37,38 +37,22 @@ export class afrika extends Sprite {
     }
 }
 
-export class rectangle1 extends Sprite {
-    app: Application
-    constructor(app: Application) {
-        super(Texture.from("afrika.jpg"));
 
-        this.app = app
-        this.zIndex = -11
-
-        this.anchor.set(0.5);
-        this.x = app.screen.width / 2;
-        this.y = app.screen.height / 2;
-        this.height = app.screen.height
-        this.width = app.screen.width
-
-        this.app.stage.addChild(this);
-
-    }
-}
 
 export class rect extends Sprite {
     app: Application
     constructor(app: Application) {
-        super(Texture.from("clampy.svg"));
+        super(Texture.from("moi-moi-beef.png"));
 
         this.app = app
-        this.zIndex = -10
+        this.zIndex = -1
 
         this.anchor.set(0.5);
         this.x = app.screen.width / 2 + 20;
         this.y = app.screen.height / 2 + 20;
         this.height = 20
-        this.width = 20
+        this.width = 40
+        this.interactive = true
 
         this.app.stage.addChild(this);
 
