@@ -21,37 +21,25 @@ fetch("http://localhost:1234/map.json")
 		cont.zIndex = -100
 
 		for (let i = 0; i < data.tiles.length; i++) {
-			// console.log(i)
 			for (let j = 0; j < 500; j++) {
-				// console.log(j)
 				if (data.tiles[i][j].passable){
 					const sprite1 = new Sprite(texture);
 					sprite1.tint = 0x08f000
-					// sprite1.x = data[j].x;
-					// sprite1.y = data[j].y;
 					sprite1.height = app.screen.height / data.mapSize.height;
 					sprite1.width = app.screen.width / data.mapSize.width;
-						sprite1.x = sprite1.width * i // parsaukt par x
-						sprite1.y = sprite1.height * j // esentialy y
-					sprite1.zIndex = -100
+					sprite1.x = sprite1.width * i // parsaukt par x
+					sprite1.y = sprite1.height * j // esentialy y
 					cont.addChild(sprite1);
-					// app.stage.addChild(sprite1)
-					// console.log(sprite1.width)
 				} else {
 					const sprite2 = new Sprite(texture);
 					sprite2.interactive = true
 					sprite2.tint = 0xf00000
-					// sprite2.x = data[j].x;
-					// sprite2.y = data[j].y;
 					sprite2.height = app.screen.height / data.mapSize.height;
 					sprite2.width = app.screen.width / data.mapSize.width;
 
-						sprite2.x = sprite2.width * i
-						sprite2.y = sprite2.height * j
-					sprite2.zIndex = -100
+					sprite2.x = sprite2.width * i
+					sprite2.y = sprite2.height * j
 					cont.addChild(sprite2);
-					// app.stage.addChild(sprite2)
-					// console.log(sprite2.width)
 
 				}
 			}
